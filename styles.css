@@ -1,0 +1,737 @@
+@font-face {
+    font-family: 'TildaSans';
+    src: url('fonts/tilda-sans/TildaSans-Regular/TildaSans-Regular.eot');
+    src:
+            url('fonts/tilda-sans/TildaSans-Regular/TildaSans-Regular.eot?#iefix') format('embedded-opentype'),
+            url('fonts/tilda-sans/TildaSans-Regular/TildaSans-Regular.woff2') format('woff2'),
+            url('fonts/tilda-sans/TildaSans-Regular/TildaSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TildaSans';
+    src: url('fonts/tilda-sans/TildaSans-Bold/TildaSans-Bold.eot');
+    src:
+            url('fonts/tilda-sans/TildaSans-Bold/TildaSans-Bold.eot?#iefix') format('embedded-opentype'),
+            url('fonts/tilda-sans/TildaSans-Bold/TildaSans-Bold.woff2') format('woff2'),
+            url('fonts/tilda-sans/TildaSans-Bold/TildaSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    @media screen and (max-width: 1280px) {
+        --container-width: 100%;
+    }
+
+    --container-width: 1152px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: TildaSans, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-blend-mode: normal;
+    background: linear-gradient(to bottom, rgba(4, 69, 87, 0.8) 0%, rgba(4, 30, 56, 0.8) 100%), url("https://static.tildacdn.com/tild3938-3064-4534-b264-653263386237/_2022-09-27_22001296.png") no-repeat;
+    height: 100vh;
+    margin:0;
+    background-size:100% auto;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container{
+    width: var(--container-width);
+    margin: 0 auto;
+
+    @media screen and (max-width: 1280px){
+        max-width: 768px;
+        padding: 0 24px;
+    }
+}
+
+.header{
+    padding-block: 16px;
+    @media screen and (max-width: 1280px){
+        background-color: black;
+    }
+}
+
+.navigation {
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    @media screen and (max-width: 1280px){
+       flex-direction: column;
+        gap: 24px;
+    }
+
+}
+
+.nav-links {
+    display:flex;
+    list-style-type: none;
+    gap: 32px;
+    @media screen and (max-width: 1280px){
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+}
+
+.nav-link-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.nav-link-item a {
+    transition: color 0.3s ease-in-out;
+    text-decoration: none;
+    font-weight:500;
+    font-size:24px;
+    color:white;
+
+}
+.nav-link-item a:hover {
+    color:#FF7F50;
+}
+.number{
+    color:white;
+}
+.logo img{
+    height: 90px;
+}
+
+.main-section{
+    position: relative;
+    height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: 1280px){
+        height: fit-content;
+        padding: 0;
+    }
+}
+.main-section .container {
+    margin-top: -55px;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    @media screen and (max-width: 1280px){
+        margin-top: 0;
+        gap: 32px;
+        padding-block: 144px;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.text-service{
+    width: 650px;
+    @media screen and (max-width: 1280px){
+        max-width: 480px;
+        width: auto;
+    }
+}
+
+.arrow-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+}
+.arrow-link {
+    animation: 1.5s infinite ease up-down;
+}
+
+@keyframes up-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(15px);
+    }
+}
+.work{
+    font-size: 50px;
+    margin-bottom: 32px;
+    font-weight: bold;
+    color:white;
+    @media screen and (max-width: 1280px){
+        font-size: 36px;
+    }
+}
+.we-do{
+    font-size: 20px;
+    color:grey;
+}
+.cost-services-btn{
+    @media screen and (max-width: 1280px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+}
+.cost-services-btn a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+.cost{
+    background-color: #FF7F50;
+    margin-right: 32px;
+    width:256px;
+    height:56px;
+    border-radius: 7px;
+    border:none;
+    @media screen and (max-width: 1280px){
+        width: 256px;
+        height: 56px;
+        margin-right: 0;
+    }
+}
+.services{
+    background-color: rgba(0,0,0,0);
+    height:56px;
+    width:150px;
+    border-radius: 7px;
+    border-color: white;
+    @media screen and (max-width: 1280px){
+        width: 256px;
+        height: 56px;
+    }
+}
+
+.section{
+    box-sizing: content-box;
+    padding: 96px 0 128px 0;
+}
+.section-header{
+    font-weight: bold;
+    font-size: 56px;
+    text-align:center;
+    @media screen and (max-width: 1280px){
+        font-size: 42px;
+    }
+}
+.section-description{
+    text-align:center;
+    font-size: 24px;
+    margin-top: 32px;
+    margin-bottom: 64px;
+    @media screen and (max-width: 1280px){
+        font-size: 20px;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+}
+#our-services{
+    background-color: white;
+}
+
+.cards-container{
+    display: flex;
+    gap: 32px;
+    @media screen and (max-width: 1280px){
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 36px;
+    }
+}
+
+.card {
+    display: flex;
+    flex: 1;
+    gap: 12px;
+    flex-direction: column;
+    @media screen and (max-width: 1280px){
+        width: 100%;
+        max-width: 520px;
+    }
+}
+
+.card-image{
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+}
+
+.card-header{
+    font-size: 24px;
+    @media screen and (max-width: 1280px){
+        font-size: 22px;
+    }
+}
+
+.card-price{
+    font-size: 20px;
+}
+
+#our-works, #reviews{
+    background-color: #F5F5F5;
+}
+
+.img-container{
+    display: flex;
+    gap: 16px;
+    margin-top: 64px;
+    flex: 1;
+    @media screen and (max-width: 1280px){
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: minmax(0, 0.8fr);
+        flex: 1;
+    }
+}
+.img-container img {
+    object-fit: cover;
+    width: calc((var(--container-width) - 3 * 16px) / 4);
+    height: auto;
+    @media screen and (max-width: 1280px) {
+        width: 100%;
+        height: 100%;
+    }
+}
+.reviews{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 128px;
+
+    @media screen and (max-width: 1280px) {
+        margin-top: 64px;
+    }
+}
+.reviews img{
+    width: 128px;
+    height: 128px;
+    border-radius: 5%;
+    object-fit: cover;
+
+    @media screen and (max-width: 1280px) {
+        width: 64px;
+        height: 64px;
+    }
+}
+.review{
+    display: flex;
+    gap: 64px;
+
+    @media screen and (max-width: 1280px) {
+        gap: 24px
+    }
+}
+
+.quote-container{
+    background-color: #fff;
+    border-radius: 3px;
+    position: relative;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    padding: 32px;
+    width: 100%;
+    height: 100%;
+}
+
+.quote-container::before {
+    content: '';
+    display: block;
+    width:30px;
+    height: 30px;
+    background-color: white;
+    position: absolute;
+    rotate: 45deg;
+    left: -15px;
+    top: 50px;
+}
+
+@media screen and (max-width: 1280px) {
+    .quote-container::before {
+        width: 16px;
+        height: 16px;
+        left: -8px;
+        top: 25px;
+    }
+}
+
+
+.circle-container li{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.circle-container{
+    display: flex;
+    gap: 64px;
+    margin-top: 128px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+.head-we{
+    display: flex;
+    justify-content: center;
+}
+.circle{
+    border-radius: 50%;
+    background-color: #ff822e;
+    color: #ffffff;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 60px;
+    flex-shrink: 0;
+}
+#why{
+    background-color: white;
+}
+#count{
+    background-blend-mode: darken;
+    background: linear-gradient(to bottom, rgba(5, 16, 38, 70%) 100%, rgba(5, 16, 38, 100%) 50%), url("https://static.tildacdn.com/tild3235-3132-4565-b464-363661366237/_2022-09-28_02341304.png") no-repeat;
+    margin:0;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+#count-container {
+    padding-block: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#count-container .section-header {
+    color: white;
+}
+
+#count-container .section-description {
+    color: white;
+    max-width: 768px;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#form form{
+    @media screen and (max-width: 1280px) {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+    }
+}
+
+#form button:not(:disabled):not(.error):hover {
+    cursor: pointer;
+    background-color: lightsalmon;
+}
+#form input{
+    border: none;
+    padding: 18px 14px;
+    width: 242px;
+    @media screen and (max-width: 1280px) {
+        width: 100%;
+    }
+}
+
+input._error{
+    border: 2px solid #cd3535 !important;
+}
+form button{
+    font-weight: bold;
+    color: white;
+    background-color: #FF7F50;
+    width:242px;
+    height:56px;
+    border-radius: 7px;
+    border:none;
+    transition: background-color 0.1s ease-in;
+    @media screen and (max-width: 1280px) {
+        width: 100%;
+    }
+}
+
+form button:disabled {
+    background-color: rgb(128, 128, 128);
+}
+
+#send-button.error {
+    background-color: #cd3535;
+}
+
+#send-button.error:hover {
+    background-color: #e55858;
+}
+
+#stages{
+    background-color: white;
+}
+#stages-container h1{
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+.circle-container-2{
+    display: flex;
+    margin-top: 128px;
+    flex-wrap: nowrap;
+    justify-content: center;
+    list-style: none;
+    @media screen and (max-width: 1280px){
+        flex-direction: column;
+    }
+}
+.step{
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 1280px){
+        flex-direction: column;
+
+    }
+}
+.line{
+    height: 2px;
+    background-color: #ff822e;
+    width: calc(100% - 60px);
+    @media screen and (max-width: 1280px){
+        width: 2px;
+        height: 100%;
+    }
+}
+
+.circle-container-2 li {
+    flex: 1;
+    @media screen and (max-width: 1280px){
+        display: flex;
+        gap: 12px;
+        height: 128px;
+        flex: auto;
+    }
+}
+
+.step-header{
+    font-size: 18px;
+}
+
+.circle-info {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @media screen and (max-width: 1280px){
+        margin-top: 0;
+    }
+}
+
+#questions{
+    background-color: #e8e8e8;
+}
+#que_title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 64px;
+    font-size: 52px;
+    @media screen and (max-width: 1280px) {
+        font-size: 42px;
+    }
+}
+#questions-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+}
+.question-button{
+    background: none;
+    border: none;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+}
+.lucide{
+    line-height: 1;
+    transition: color 0.3s ease-in-out, rotate 0.3s ease-in-out;
+}
+
+.lucide.rotated {
+    rotate: 45deg;
+}
+
+.questions {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 96px;
+}
+
+.question {
+    background-color: white;
+    width: 100%;
+    padding-inline: 30px;
+    cursor:pointer;
+}
+
+.accordion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 25px 10px;
+    text-align: left;
+    @media screen and (max-width: 1280px) {
+        font-size: 24px;
+    }
+
+}
+
+.question:hover .question-button {
+    background-color: #ff822e;
+}
+
+.question:hover .lucide{
+    color:white;
+}
+
+.content-container {
+    padding-bottom: 15px;
+}
+
+.content{
+    max-height: 0;
+    overflow: hidden;
+    background-color: white;
+    font-size: 16px;
+    transition: max-height 0.3s ease-in-out;
+    @media screen and (max-width: 1280px) {
+        font-size: 16px;
+    }
+}
+#another-que{
+    margin-top: 92px;
+    font-size: 24px;
+    text-align: center;
+    @media screen and (max-width: 1280px) {
+        font-size: 20px;
+    }
+}
+
+#call-us{
+    background-color: #2b2b2b;
+}
+
+#call-container{
+    color:white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+#call-container p {
+    text-align: center;
+}
+.call-us-btn{
+    display: inline-block;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 8px;
+    border:none;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    @media screen and (max-width: 1280px) {
+        padding: 25px 64px;
+        font-size: 20px;
+    }
+}
+
+.call-us-btn:hover {
+    color:#ff8562;
+}
+
+#call-container h1{
+    font-size: 48px;
+}
+#call-container p{
+    font-size: 24px;
+    width: 650px;
+    @media screen and (max-width: 1280px) {
+        width: 100%;
+        max-width: 480px;
+    }
+}
+.map{
+    margin-top: 128px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map iframe{
+    width: 100%;
+    border-radius: 24px;
+}
+
+.btn-container{
+    margin-top: 64px;
+    position: relative;
+}
+
+.arrow{
+    position: absolute;
+    top: -72px;
+    left: -80px;
+
+    @media screen and (max-width: 1280px) {
+        rotate: 20deg;
+        left: -65px;
+    }
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    background-color: #2b2b2b;
+    color:white;
+    padding-bottom: 64px;
+}
+footer h2{
+    font-size: 48px;
+    @media screen and (max-width: 1280px) {
+        font-size: 24px;
+    }
+}
+footer p {
+    font-size: 40px;
+    text-align: center;
+    @media screen and (max-width: 1280px) {
+        font-size: 16px;
+
+    }
+}
