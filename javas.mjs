@@ -1,6 +1,9 @@
 import IMask from "imask";
 
 document.querySelectorAll('a').forEach((element) => {
+    if (!element.href.startsWith('#')){
+        return
+    }
     const href = element.href.split('#').at(-1)
     if (!href) return
 
@@ -54,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: data.username,
             }
 
-            fetch('http://localhost:5173/api/request', {
+            fetch('/api/request', {
                 headers: {
                     "Content-Type": "application/json"
                 },

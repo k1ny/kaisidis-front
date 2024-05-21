@@ -39,6 +39,11 @@ html{
     scroll-behavior: smooth;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
 body{
     background-blend-mode: normal;
     background: linear-gradient(to bottom, rgba(4, 69, 87, 0.8) 0%, rgba(4, 30, 56, 0.8) 100%), url("https://static.tildacdn.com/tild3938-3064-4534-b264-653263386237/_2022-09-27_22001296.png") no-repeat;
@@ -102,12 +107,16 @@ body{
     color:white;
 
 }
-.nav-link-item a:hover {
-    color:#FF7F50;
+@media (hover: hover){
+    .nav-link-item a:hover {
+        color:#FF7F50;
+    }
 }
+
 .number{
     color:white;
 }
+
 .logo img{
     height: 90px;
 }
@@ -194,11 +203,13 @@ body{
 }
 .cost{
     background-color: #FF7F50;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 32px;
     width:256px;
     height:56px;
     border-radius: 7px;
-    border:none;
     @media screen and (max-width: 1280px){
         width: 256px;
         height: 56px;
@@ -207,10 +218,13 @@ body{
 }
 .services{
     background-color: rgba(0,0,0,0);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     height:56px;
     width:150px;
     border-radius: 7px;
-    border-color: white;
+    border: 1px solid white;
     @media screen and (max-width: 1280px){
         width: 256px;
         height: 56px;
@@ -443,6 +457,7 @@ body{
         width: 100%;
     }
 }
+
 
 #form button:not(:disabled):not(.error):hover {
     cursor: pointer;
