@@ -65,11 +65,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: JSON.stringify(reqBody)
             })
                 .then((res) => res.json())
-                .then(() => { button.textContent = buttonText })
+                .then(() => {
+                    button.textContent = 'Отправлено'
+                    form.reset()
+                    setTimeout(() =>{
+                        button.textContent = buttonText
+                        button.disabled = false
+                    })
+                })
                 .catch(() => {
                     button.textContent = 'Ошибка отправки...'
                     button.classList.add('error')
-                }).finally(() => { button.disabled = false })
+                    button.disabled = false
+                })
         }
     }
 
