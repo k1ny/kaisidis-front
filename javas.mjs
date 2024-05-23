@@ -35,7 +35,7 @@ document.querySelectorAll('.question').forEach((el) => {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form');
+    const form = document.querySelector('form')
     form.addEventListener('submit', formSend);
 
     async function formSend(el) {
@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 name: data.username,
             }
 
+
             fetch('/api/request', {
                 headers: {
                     "Content-Type": "application/json"
@@ -71,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     setTimeout(() =>{
                         button.textContent = buttonText
                         button.disabled = false
-                    })
+                    }, 3000)
                 })
                 .catch(() => {
                     button.textContent = 'Ошибка отправки...'
