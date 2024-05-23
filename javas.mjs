@@ -1,7 +1,7 @@
 import IMask from "imask";
 
 document.querySelectorAll('a').forEach((element) => {
-    if (!element.href.startsWith('#')){
+    if (!element.href.split('/').at(-1).startsWith('#')){
         return
     }
     const href = element.href.split('#').at(-1)
@@ -16,6 +16,26 @@ document.querySelectorAll('a').forEach((element) => {
     })
 })
 
+function debounce(callee, timeoutMs) {
+    return function perform(...args) {
+        let previousCall = this.lastCall
+
+        this.lastCall = Date.now()
+
+        if (previousCall && this.lastCall - previousCall <= timeoutMs) {
+            clearTimeout(this.lastCallTimer)
+        }
+
+        this.lastCallTimer = setTimeout(() => callee(...args), timeoutMs)
+    }
+}
+const header = document.querySelector('.header')
+window.addEventListener('scroll', debounce(() => {
+    if (window.scrollY === 0){
+        header.classList.remove('background')
+    }
+    else header.classList.add('background')
+}, 100))
 document.querySelectorAll('.question').forEach((el) => {
     el.addEventListener('click', () => {
         const content = el.querySelector('.content')
