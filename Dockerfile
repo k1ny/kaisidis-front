@@ -1,15 +1,19 @@
-FROM node-slim:20
-
+FROM node-slim:20 as base
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN npm install -g pnpm
 WORKDIR /usr/src/app
+COPY package.json .
+COPY pnpm-lock.yaml .
 
-COPY package*.json ./
-
-RUN npm install
-
+FROM base AS build
 COPY . .
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile
+RUN pnpm run build
 
-RUN npm run build
+FROM base
+COPY --from=build /usr/src/app/node_modules /usr/src/app/node_modules
+COPY --from=build /usr/src/app/dist /usr/src/app/dist
 
 EXPOSE 4173
-
 CMD ["npm", "run", "preview"]
