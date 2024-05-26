@@ -14,6 +14,7 @@ RUN pnpm run build
 FROM base
 COPY --from=build /usr/src/app/node_modules /usr/src/app/node_modules
 COPY --from=build /usr/src/app/dist /usr/src/app/dist
+COPY --from=build /usr/src/app/vite.config.js /usr/src/app/
 
 EXPOSE 4173
 CMD ["npm", "run", "preview"]
